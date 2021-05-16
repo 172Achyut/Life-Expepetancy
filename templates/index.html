@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="/static/fonts/icomoon/style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/fonts/icomoon/style.css') }}">
+
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="/static/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css') }}">
+    
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+   
+
+    <title>LifeExpatency</title>
+    <style>
+      body{
+        background-color: blanchedalmond;
+      }
+      .contact-wrap .col-form-label{
+        color: blue;
+      }
+      body:before {
+        background-image: url("/static/images/2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <div class="row align-items-stretch no-gutters contact-wrap">
+        <div class="col-md-8">
+          <div class="form h-100">
+            <h3>Insert Details</h3>
+            <form class="mb-5" action="{{ url_for('predict')}}" method="post">
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="ad_mora" class="col-form-label">Adult Mortality</label>
+                  <input type="number" step="any" class="form-control" name="ad_mora" id="ad_mora">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="alcohol" class="col-form-label">Alcohol</label>
+                  <input type="number" step="any" class="form-control" name="alcohol" id="alcohol">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="bmi" class="col-form-label">BMI</label>
+                  <input type="number" step="any" class="form-control" name="bmi" id="bmi">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="country" class="col-form-label">Choose a country:</label>
+                  <select  class="form-control" id="country" name="country">
+                    <option >-------Select Your Country------</option>
+                    <option value='Afghanistan'>Afghanistan</option>
+                    <option value='Albania'>Albania</option>
+                    <option value='Algeria'>Algeria</option>
+                    <option value='Angola'>Angola</option>
+                    <option value='Antigua and Barbuda'>Antigua and Barbuda</option>
+                    <option value='Argentina'>Argentina</option>
+                    <option value='Armenia'>Armenia</option>
+                    <option value='Australia'>Australia</option>
+                    <option value='Austria'>Austria</option>
+                    <option value='Azerbaijan'>Azerbaijan</option>
+                    <option value='Bahamas'>Bahamas</option>
+                    <option value='Bahrain'>Bahrain</option>
+                    <option value='Bangladesh'>Bangladesh</option>
+                    <option value='Barbados'>Barbados</option>
+                    <option value='Belarus'>Belarus</option>
+                    <option value='Belgium'>Belgium</option>
+                    <option value='Belize'>Belize</option>
+                    <option value='Benin'>Benin</option>
+                    <option value='Bhutan'>Bhutan</option>
+                    <option value='Bolivia (Plurinational State of)'>Bolivia (Plurinational State of)</option>
+                    <option value='Bosnia and Herzegovina'>Bosnia and Herzegovina</option>
+                    <option value='Botswana'>Botswana</option>
+                    <option value='Brazil'>Brazil</option>
+                    <option value='Brunei Darussalam'>Brunei Darussalam</option>
+                    <option value='Bulgaria'>Bulgaria</option>
+                    <option value='Burkina Faso'>Burkina Faso</option>
+                    <option value='Burundi'>Burundi</option>
+                    <option value="CÃ´te d'Ivoire">CÃ´te d'Ivoire</option>
+                    <option value='Cabo Verde'>Cabo Verde</option>
+                    <option value='Cambodia'>Cambodia</option>
+                    <option value='Cameroon'>Cameroon</option>
+                    <option value='Canada'>Canada</option>
+                    <option value='Central African Republic'>Central African Republic</option>
+                    <option value='Chad'>Chad</option>
+                    <option value='Chile'>Chile</option>
+                    <option value='China'>China</option>
+                    <option value='Colombia'>Colombia</option>
+                    <option value='Comoros'>Comoros</option>
+                    <option value='Congo'>Congo</option>
+                    <option value='Costa Rica'>Costa Rica</option>
+                    <option value='Croatia'>Croatia</option>
+                    <option value='Cuba'>Cuba</option>
+                    <option value='Cyprus'>Cyprus</option>
+                    <option value='Czechia'>Czechia</option>
+                    <option value="Democratic People's Republic of Korea">Democratic People's Republic of Korea</option>
+                    <option value='Denmark'>Denmark</option>
+                    <option value='Djibouti'>Djibouti</option>
+                    <option value='Dominican Republic'>Dominican Republic</option>
+                    <option value='Ecuador'>Ecuador</option>
+                    <option value='Egypt'>Egypt</option>
+                    <option value='El Salvador'>El Salvador</option>
+                    <option value='Equatorial Guinea'>Equatorial Guinea</option>
+                    <option value='Eritrea'>Eritrea</option>
+                    <option value='Estonia'>Estonia</option>
+                    <option value='Fiji'>Fiji</option>
+                    <option value='Finland'>Finland</option>
+                    <option value='France'>France</option>
+                    <option value='Gabon'>Gabon</option>
+                    <option value='Gambia'>Gambia</option>
+                    <option value='Georgia'>Georgia</option>
+                    <option value='Germany'>Germany</option>
+                    <option value='Ghana'>Ghana</option>
+                    <option value='Greece'>Greece</option>
+                    <option value='Grenada'>Grenada</option>
+                    <option value='Guatemala'>Guatemala</option>
+                    <option value='Guinea'>Guinea</option>
+                    <option value='Guinea-Bissau'>Guinea-Bissau</option>
+                    <option value='Guyana'>Guyana</option>
+                    <option value='Haiti'>Haiti</option>
+                    <option value='Honduras'>Honduras</option>
+                    <option value='Hungary'>Hungary</option>
+                    <option value='Iceland'>Iceland</option>
+                    <option value='India'>India</option>
+                    <option value='Indonesia'>Indonesia</option>
+                    <option value='Iran (Islamic Republic of)'>Iran (Islamic Republic of)</option>
+                    <option value='Iraq'>Iraq</option>
+                    <option value='Ireland'>Ireland</option>
+                    <option value='Israel'>Israel</option>
+                    <option value='Italy'>Italy</option>
+                    <option value='Jamaica'>Jamaica</option>
+                    <option value='Japan'>Japan</option>
+                    <option value='Jordan'>Jordan</option>
+                    <option value='Kazakhstan'>Kazakhstan</option>
+                    <option value='Kenya'>Kenya</option>
+                    <option value='Kiribati'>Kiribati</option>
+                    <option value='Kuwait'>Kuwait</option>
+                    <option value='Kyrgyzstan'>Kyrgyzstan</option>
+                    <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                    <option value='Latvia'>Latvia</option>
+                    <option value='Lebanon'>Lebanon</option>
+                    <option value='Lesotho'>Lesotho</option>
+                    <option value='Liberia'>Liberia</option>
+                    <option value='Libya'>Libya</option>
+                    <option value='Lithuania'>Lithuania</option>
+                    <option value='Luxembourg'>Luxembourg</option>
+                    <option value='Madagascar'>Madagascar</option>
+                    <option value='Malawi'>Malawi</option>
+                    <option value='Malaysia'>Malaysia</option>
+                    <option value='Maldives'>Maldives</option>
+                    <option value='Mali'>Mali</option>
+                    <option value='Malta'>Malta</option>
+                    <option value='Mauritania'>Mauritania</option>
+                    <option value='Mauritius'>Mauritius</option>
+                    <option value='Mexico'>Mexico</option>
+                    <option value='Micronesia (Federated States of)'>Micronesia (Federated States of)</option>
+                    <option value='Monaco'>Monaco</option>
+                    <option value='Mongolia'>Mongolia</option>
+                    <option value='Montenegro'>Montenegro</option>
+                    <option value='Morocco'>Morocco</option>
+                    <option value='Mozambique'>Mozambique</option>
+                    <option value='Myanmar'>Myanmar</option>
+                    <option value='Namibia'>Namibia</option>
+                    <option value='Nauru'>Nauru</option>
+                    <option value='Nepal'>Nepal</option>
+                    <option value='Netherlands'>Netherlands</option>
+                    <option value='New Zealand'>New Zealand</option>
+                    <option value='Nicaragua'>Nicaragua</option>
+                    <option value='Niger'>Niger</option>
+                    <option value='Nigeria'>Nigeria</option>
+                    <option value='Niue'>Niue</option>
+                    <option value='Norway'>Norway</option>
+                    <option value='Oman'>Oman</option>
+                    <option value='Pakistan'>Pakistan</option>
+                    <option value='Palau'>Palau</option>
+                    <option value='Panama'>Panama</option>
+                    <option value='Papua New Guinea'>Papua New Guinea</option>
+                    <option value='Paraguay'>Paraguay</option>
+                    <option value='Peru'>Peru</option>
+                    <option value='Philippines'>Philippines</option>
+                    <option value='Poland'>Poland</option>
+                    <option value='Portugal'>Portugal</option>
+                    <option value='Qatar'>Qatar</option>
+                    <option value='Republic of Korea'>Republic of Korea</option>
+                    <option value='Republic of Moldova'>Republic of Moldova</option>
+                    <option value='Romania'>Romania</option>
+                    <option value='Russian Federation'>Russian Federation</option>
+                    <option value='Rwanda'>Rwanda</option>
+                    <option value='Saint Lucia'>Saint Lucia</option>
+                    <option value='Samoa'>Samoa</option>
+                    <option value='San Marino'>San Marino</option>
+                    <option value='Sao Tome and Principe'>Sao Tome and Principe</option>
+                    <option value='Saudi Arabia'>Saudi Arabia</option>
+                    <option value='Senegal'>Senegal</option>
+                    <option value='Serbia'>Serbia</option>
+                    <option value='Seychelles'>Seychelles</option>
+                    <option value='Sierra Leone'>Sierra Leone</option>
+                    <option value='Singapore'>Singapore</option>
+                    <option value='Slovakia'>Slovakia</option>
+                    <option value='Slovenia'>Slovenia</option>
+                    <option value='Solomon Islands'>Solomon Islands</option>
+                    <option value='Somalia'>Somalia</option>
+                    <option value='South Africa'>South Africa</option>
+                    <option value='South Sudan'>South Sudan</option>
+                    <option value='Spain'>Spain</option>
+                    <option value='Sri Lanka'>Sri Lanka</option>
+                    <option value='Sudan'>Sudan</option>
+                    <option value='Suriname'>Suriname</option>
+                    <option value='Swaziland'>Swaziland</option>
+                    <option value='Sweden'>Sweden</option>
+                    <option value='Switzerland'>Switzerland</option>
+                    <option value='Syrian Arab Republic'>Syrian Arab Republic</option>
+                    <option value='Tajikistan'>Tajikistan</option>
+                    <option value='Thailand'>Thailand</option>
+                    <option value='The former Yugoslav republic of Macedonia'>The former Yugoslav republic of Macedonia</option>
+                    <option value='Timor-Leste'>Timor-Leste</option>
+                    <option value='Togo'>Togo</option>
+                    <option value='Tonga'>Tonga</option>
+                    <option value='Trinidad and Tobago'>Trinidad and Tobago</option>
+                    <option value='Tunisia'>Tunisia</option>
+                    <option value='Turkey'>Turkey</option>
+                    <option value='Turkmenistan'>Turkmenistan</option>
+                    <option value='Tuvalu'>Tuvalu</option>
+                    <option value='Uganda'>Uganda</option>
+                    <option value='Ukraine'>Ukraine</option>
+                    <option value='United Arab Emirates'>United Arab Emirates</option>
+                    <option value='United Kingdom of Great Britain and Northern Ireland'>United Kingdom of Great Britain and Northern Ireland</option>
+                    <option value='United Republic of Tanzania'>United Republic of Tanzania</option>
+                    <option value='United States of America'>United States of America</option>
+                    <option value='Uruguay'>Uruguay</option>
+                    <option value='Uzbekistan'>Uzbekistan</option>
+                    <option value='Vanuatu'>Vanuatu</option>
+                    <option value='Venezuela (Bolivarian Republic of)'>Venezuela (Bolivarian Republic of)</option>
+                    <option value='Viet Nam'>Viet Nam</option>
+                    <option value='Yemen'>Yemen</option>
+                    <option value='Zambia'>Zambia</option>
+                    <option value='Zimbabwe'>Zimbabwe</option>
+          
+          
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="dthr" class="col-form-label">Diphtheria</label>
+                  <input type="number" step="any" class="form-control" name="dthr" id="dthr">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="GDP" class="col-form-label">GDP</label>
+                  <input type="number" step="any" class="form-control" name="GDP" id="GDP">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="hiv" class="col-form-label">HIV/AIDS</label>
+                  <input type="number" step="any" class="form-control" name="hiv" id="hiv">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="hepa" class="col-form-label">Hepatitis B</label>
+                  <input type="number" step="any" class="form-control" name="hepa" id="hepa">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="in_cm_yr" class="col-form-label">Income Composition Of Resources</label>
+                  <input type="number" step="any" class="form-control" name="in_cm_yr" id="in_cm_yr">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="measles" class="col-form-label">Measles</label>
+                  <input type="number" class="form-control" name="measles" id="measles">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="polio" class="col-form-label">Polio</label>
+                  <input type="number" step="any" class="form-control" name="polio" id="polio">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="population" class="col-form-label">Population</label>
+                  <input type="number" step="any" class="form-control" name="population" id="population">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="schooling" class="col-form-label">Schooling</label>
+                  <input type="number" step="any" class="form-control" name="schooling" id="schooling">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="status" class="col-form-label">Status</label>
+                  <!-- <input type="text" class="form-control" name="status" id="status"> -->
+                  <select  class="form-control" id="status" name="status">
+                    <option >--------Select Status--------</option>
+                    <option value='Developing'>Developing</option>
+                    <option value='Developed'>Developed</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="t_exp" class="col-form-label">Total Expenditure</label>
+                  <input type="number" step="any" class="form-control" name="t_exp" id="t_exp">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="year" class="col-form-label">Year</label>
+                  <input type="number" class="form-control" name="year" id="year">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="inf_dth" class="col-form-label">Infant Deaths</label>
+                  <input type="number" class="form-control" name="inf_dth" id="inf_dth">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="per_exp" class="col-form-label">Percentage Expenditure</label>
+                  <input type="number" step="any" class="form-control" name="per_exp" id="per_exp">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="thn_1_19_yr" class="col-form-label">Thinness(10-19 Years)</label>
+                  <input type="number" step="any" class="form-control" name="thn_1_19_yr" id="thn_1_19_yr">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="thn_5_9_yr" class="col-form-label">Thinness(5-9 Years)</label>
+                  <input type="number" step="any" class="form-control" name="thn_5_9_yr" id="thn_5_9_yr">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="v_dth" class="col-form-label">Under-Five Deaths</label>
+                  <input type="number" class="form-control" name="v_dth" id="v_dth">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <input type="submit" value="Predict Life Expectancy" class="btn btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                </div>
+              </div>
+              <!-- {{ prediction_text }} -->
+            </form>
+
+            <!-- <div id="form-message-warning mt-4"></div> 
+            <div id="form-message-success">
+              {{ prediction_text }}
+            </div> -->
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-info h-100">
+            <h3>Life Expectancy Prediction</h3>
+            <p class="mb-5">Life expectancy is one of the most important criteria for determining the population health and henceforth the overall economic growth and sustainability of the country since healthy individuals are considered to be a productive asset for the economy and ultimately they can be able to contribute towards the development of the country in a better and more effective way. Therefore the citizens should be well aware about the average life expectancy of their country so that necessary measures can be taken at each individual level in order to improve the overall life expectancy of the nation as a whole. This is the soul idea behind the choice of the topic life expectancy prediction for our machine learning project. </p>
+            <ul class="list-unstyled">
+              <li class="d-flex">
+                <span class="wrap-icon icon-room mr-3"></span>
+                <span class="text">Silicon Institute Of Technology, Bhubneswar</span>
+              </li>
+              <!-- <li class="d-flex">
+                <span class="wrap-icon icon-phone mr-3"></span>
+                <span class="text">+91 9776128533</span>
+              </li>
+              <li class="d-flex">
+                <span class="wrap-icon icon-envelope mr-3"></span>
+                <span class="text">172achyutananda@gmail.com</span>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<!--     
+    
+
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.validate.min.js"></script>
+    <script src="/static/js/main.js"></script> -->
+
+  </body>
+</html>
