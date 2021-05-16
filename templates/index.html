@@ -1,44 +1,48 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="/static/fonts/icomoon/style.css"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='/fonts/icomoon/style.css') }}">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="/static/fonts/icomoon/style.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='/fonts/icomoon/style.css') }}">
 
 
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="/static/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css') }}">
-    
-    <!-- Style -->
-    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
-   
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="/static/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css') }}">
 
-    <title>LifeExpatency</title>
-    <style>
-      body{
-        background-color: blanchedalmond;
-      }
-      .contact-wrap .col-form-label{
-        color: blue;
-      }
-      body:before {
-        background-image: url("/static/images/2.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    </style>
-  </head>
-  <body>
-  
+  <!-- Style -->
+  <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+
+
+  <title>LifeExpatency</title>
+  <style>
+    body {
+      background-color: blanchedalmond;
+    }
+
+    .contact-wrap .col-form-label {
+      color: blue;
+    }
+
+    body:before {
+      background-image: url("/static/images/2.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+
 
   <div class="content">
-    
+
     <div class="container">
       <div class="row align-items-stretch no-gutters contact-wrap">
         <div class="col-md-8">
@@ -63,8 +67,8 @@
                 </div>
                 <div class="col-md-6 form-group mb-5">
                   <label for="country" class="col-form-label">Choose a country:</label>
-                  <select  class="form-control" id="country" name="country">
-                    <option >-------Select Your Country------</option>
+                  <select class="form-control" id="country" name="country">
+                    <option>-------Select Your Country------</option>
                     <option value='Afghanistan'>Afghanistan</option>
                     <option value='Albania'>Albania</option>
                     <option value='Algeria'>Algeria</option>
@@ -228,7 +232,8 @@
                     <option value='Syrian Arab Republic'>Syrian Arab Republic</option>
                     <option value='Tajikistan'>Tajikistan</option>
                     <option value='Thailand'>Thailand</option>
-                    <option value='The former Yugoslav republic of Macedonia'>The former Yugoslav republic of Macedonia</option>
+                    <option value='The former Yugoslav republic of Macedonia'>The former Yugoslav republic of Macedonia
+                    </option>
                     <option value='Timor-Leste'>Timor-Leste</option>
                     <option value='Togo'>Togo</option>
                     <option value='Tonga'>Tonga</option>
@@ -240,7 +245,8 @@
                     <option value='Uganda'>Uganda</option>
                     <option value='Ukraine'>Ukraine</option>
                     <option value='United Arab Emirates'>United Arab Emirates</option>
-                    <option value='United Kingdom of Great Britain and Northern Ireland'>United Kingdom of Great Britain and Northern Ireland</option>
+                    <option value='United Kingdom of Great Britain and Northern Ireland'>United Kingdom of Great Britain
+                      and Northern Ireland</option>
                     <option value='United Republic of Tanzania'>United Republic of Tanzania</option>
                     <option value='United States of America'>United States of America</option>
                     <option value='Uruguay'>Uruguay</option>
@@ -251,8 +257,8 @@
                     <option value='Yemen'>Yemen</option>
                     <option value='Zambia'>Zambia</option>
                     <option value='Zimbabwe'>Zimbabwe</option>
-          
-          
+
+
                   </select>
                 </div>
               </div>
@@ -312,8 +318,8 @@
                 <div class="col-md-6 form-group mb-5">
                   <label for="status" class="col-form-label">Status</label>
                   <!-- <input type="text" class="form-control" name="status" id="status"> -->
-                  <select  class="form-control" id="status" name="status">
-                    <option >--------Select Status--------</option>
+                  <select class="form-control" id="status" name="status">
+                    <option>--------Select Status--------</option>
                     <option value='Developing'>Developing</option>
                     <option value='Developed'>Developed</option>
                   </select>
@@ -366,7 +372,8 @@
 
               <div class="row">
                 <div class="col-md-12 form-group">
-                  <input type="submit" value="Predict Life Expectancy" class="btn btn-primary rounded-0 py-2 px-4">
+                  <input type="submit" value="Predict Life Expectancy" class="btn btn-primary rounded-0 py-2 px-4"
+                    onclick="sendData()">
                   <span class="submitting"></span>
                 </div>
               </div>
@@ -383,7 +390,13 @@
         <div class="col-md-4">
           <div class="contact-info h-100">
             <h3>Life Expectancy Prediction</h3>
-            <p class="mb-5">Life expectancy is one of the most important criteria for determining the population health and henceforth the overall economic growth and sustainability of the country since healthy individuals are considered to be a productive asset for the economy and ultimately they can be able to contribute towards the development of the country in a better and more effective way. Therefore the citizens should be well aware about the average life expectancy of their country so that necessary measures can be taken at each individual level in order to improve the overall life expectancy of the nation as a whole. This is the soul idea behind the choice of the topic life expectancy prediction for our machine learning project. </p>
+            <p class="mb-5">Life expectancy is one of the most important criteria for determining the population health
+              and henceforth the overall economic growth and sustainability of the country since healthy individuals are
+              considered to be a productive asset for the economy and ultimately they can be able to contribute towards
+              the development of the country in a better and more effective way. Therefore the citizens should be well
+              aware about the average life expectancy of their country so that necessary measures can be taken at each
+              individual level in order to improve the overall life expectancy of the nation as a whole. This is the
+              soul idea behind the choice of the topic life expectancy prediction for our machine learning project. </p>
             <ul class="list-unstyled">
               <li class="d-flex">
                 <span class="wrap-icon icon-room mr-3"></span>
@@ -402,16 +415,18 @@
         </div>
       </div>
     </div>
-
   </div>
-<!--     
-    
+  <script>
+    function sendData() {
+      if (document.getElementById('ad_mora').value == '' || document.getElementById('alcohol').value == '' || document.getElementById('bmi').value == '' || document.getElementById('country').value == '' || document.getElementById('dthr').value == '' || document.getElementById('GDP').value == '' || document.getElementById('hiv').value == '' || document.getElementById('hepa').value == '' || document.getElementById('in_cm_yr').value == '' || document.getElementById('measles').value == '' || document.getElementById('polio').value == '' || document.getElementById('population').value == '' || document.getElementById('schooling').value == '' || document.getElementById('status').value == '' || document.getElementById('t_exp').value == '' || document.getElementById('year').value == '' || document.getElementById('inf_dth').value == '' || document.getElementById('per_exp').value == '' || document.getElementById('thn_1_19_yr').value == '' || document.getElementById('thn_5_9_yr').value == '' || document.getElementById('v_dth').value == '') {
+        alert('Please Fill All The Input Fields!!')
+        return false;
+      } else {
+        alert('All data inserted successfully just click OK for predict result.')
+      }
 
-    <script src="/static/js/jquery-3.3.1.min.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/jquery.validate.min.js"></script>
-    <script src="/static/js/main.js"></script> -->
+    }
+  </script>
+</body>
 
-  </body>
 </html>
